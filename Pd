@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Landing Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:transparent;
+    transition:0.4s;
+    z-index:1000;
+}
+
+nav.scrolled{
+    background:#111;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    padding:8px 15px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background:white;
+    color:black;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:linear-gradient(135deg,#4f46e5,#9333ea);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-top:10px;
+}
+
+/* Sections */
+section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.about{
+    background:white;
+}
+
+.services{
+    background:#e5e7eb;
+}
+
+.contact{
+    background:white;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+nav{
+    padding:15px;
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:10px;
+}
+
+nav ul li{
+    margin:5px;
+}
+
+.hero h1{
+    font-size:35px;
+}
+
+.hero p{
+    font-size:16px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav id="navbar">
+    <div class="logo">PRODIGY</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero" id="home">
+    <h1>Responsive Landing Page</h1>
+    <p>Interactive Navigation Menu</p>
+</div>
+
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <br>
+    <p>This landing page is created using HTML, CSS and JavaScript.</p>
+</section>
+
+<section class="services" id="services">
+    <h2>Our Services</h2>
+    <br>
+    <p>Web Design, Web Development and Responsive UI Design.</p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <br>
+    <p>Email: example@gmail.com</p>
+</section>
+
+<script>
+window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+</script>
+
+</body>
+</html>
